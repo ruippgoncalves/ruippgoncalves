@@ -12,4 +12,4 @@
 * Estudante (12º Ano)
 
 ## Alguns Projetos Desenvolvidos para a Escola
-* [Projeto de Redes - 2020](https://ruippgoncalves.github.io/escola2020recProj)
+* [Projeto de Redes - 2020](https://ruippgoncalves.github.io/ruippgoncalves/escola2020recProj)
