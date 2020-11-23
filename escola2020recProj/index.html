@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desporto Escolar</title>
+
+    <!-- Components/Animations -->
+    <link rel="stylesheet" href="vendor/css/main.css">
+    <link rel="stylesheet" href="vendor/css/bar.css">
+    <link rel="stylesheet" href="vendor/css/carousel.css">
+    <link rel="stylesheet" href="vendor/css/modal.css">
+
+    <!-- Main -->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <!-- NavBar -->
+    <nav class="bar" style="display: none;" id="navbar">
+        <div class="bar-icon">
+            <img src="assets/gmd-directions_run-white-18dp.svg" width="30px" />
+        </div>
+
+        <div class="bar-btn bar-hide">
+            <a onclick="slideUp()">Voltar ao Topo</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Carousel -->
+        <div class="carousel" id="carousel">
+            <div class="carousel-title">
+                Desporto Escolar
+            </div>
+
+            <div class="carousel-item">
+                <img src="assets/btt.jpg" alt="BTT">
+            </div>
+            <div class="carousel-item">
+                <img src="assets/dance.jpg" alt="Dança">
+            </div>
+            <div class="carousel-item">
+                <img src="assets/tennis.jpg" alt="Ténis">
+            </div>
+            <div class="carousel-item">
+                <img src="assets/volleyball.jpg" alt="Voleibol">
+            </div>
+
+            <div class="carousel-btn" onclick="slideDown()">
+                Saber Mais &downarrow;
+            </div>
+        </div>
+
+        <!-- Modalidades -->
+        <div style="width: 100vw; height: calc(90vh - 54px); padding: 10px; text-align: center;">
+            <h1 style="margin-bottom: 20px;">Desportos Disponiveis</h1>
+
+            <form style="display: block;">
+                <div>
+                <label for="idade">Introduza a sua idade: </label>
+                <input name="idade" type="number" min="6" max="25" required /><br />
+
+                <label for="sexo">Selecione o seu Sexo: </label>
+                <select required name="sexo">
+                    <option value="masc" selected>Masculino</option>
+                    <option value="femi">Feminino</option>
+                </select><br />
+
+                <input type="button" value="Verificar Desportos Disponiveis" onclick="disponibilidade()" /><br />
+
+                <div id="disponibilidade" style="text-align: left; width: fit-content; margin-left: auto; margin-right: auto;"></div>
+
+                <div class="modal" id="modal">
+                    <p class="modal-close">&times;</p>
+
+                    <label for="email">Email: </label>
+                    <input type="email" name="email" required /><br />
+
+                    <label for="nome">Nome (Completo): </label>
+                    <input type="text" name="nome" required /><br />
+
+                    <label for="ano">Ano: </label>
+                    <select name="ano" required>
+                        <optgroup label="1º Ciclo">
+                            <option value="1">1º Ano</option>
+                            <option value="2">2º Ano</option>
+                            <option value="3">3º Ano</option>
+                            <option value="4">4º Ano</option>
+                        </optgroup>
+                        <optgroup label="2º Ciclo">
+                            <option value="5">5º Ano</option>
+                            <option value="6">6º Ano</option>
+                        </optgroup>
+                        <optgroup label="3º Ciclo">
+                            <option value="7">7º Ano</option>
+                            <option value="8">8º Ano</option>
+                            <option value="9">9º Ano</option>
+                        </optgroup>
+                        <optgroup label="Secundário">
+                            <option value="10">10º Ano</option>
+                            <option value="11">11º Ano</option>
+                            <option value="12">12º Ano</option>
+                        </optgroup>
+                    </select><br />
+
+                    <label for="turma">Turma: </label>
+                    <input type="text" name="turma" required /><br />
+
+                    <label for="telemovel">Contacto Telemóvel: </label>
+                    <input type="tel" name="telemovel" /><br />
+
+                    <input type="submit" value="Inscrever" />
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer style="height: 10vh; text-align: center; padding-top: 5vh;">
+        <div style="background-color: gainsboro; padding-top: 1.5vh; height: 5vh;">
+            <a href="https://github.com/ruippgoncalves/ruippgoncalves/tree/master/escola2020recProj" target="_blank">Desenvolvido Por Rui Gonçalves</a>
+        </div>
+    </footer>
+
+    <script src="vendor/js/carousel.js"></script>
+    <script src="vendor/js/modal.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
