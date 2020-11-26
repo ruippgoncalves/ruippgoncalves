@@ -3,8 +3,7 @@ function slideDown() {
     document.body.style.overflowY = 'auto';
     document.getElementById('navbar').style.display = 'block';
 
-    const height = window.innerHeight;
-    window.scrollBy(0, height - 54);
+    window.scrollTo(0, window.innerHeight - 54);
 }
 
 function slideUp() {
@@ -22,6 +21,7 @@ function disponibilidade() {
 
     if (!idade || idade > 25 || idade < 6) return window.alert('Preencha Todos os Dados!');
 
+    // Nota Futura, não fazer isto sem JSX
     disponibilidadeDiv.innerHTML = `
     ${sexo === 'femi' ? `
         <input type="checkbox" name="voleibol" />
@@ -43,21 +43,28 @@ function disponibilidade() {
         <label for="btt">BTT - 2ª e 4ª - Escola Egas Moniz</label><br />
 
         <div style="text-align: center;">
-            <input type="button" onclick="openModalIf()" value="Pré-Inscrição" />
+            <input type="button" onclick="submitForm()" value="Inscrever-me" />
         </div>
     `;
 }
 
 // Obrigar a escolher pelo menos um Desporto
-function openModalIf() {
-    const open = document.getElementsByName('voleibol')[0].checked ||
+function submitForm() {
+    const sub = document.getElementsByName('voleibol')[0].checked ||
         document.getElementsByName('padel')[0].checked ||
         document.getElementsByName('tenis')[0].checked ||
         document.getElementsByName('danca')[0].checked ||
         document.getElementsByName('btt')[0].checked;
 
-    if (!open) return window.alert('Tem de Selecionar pelo Menos Um Desporto!');
-    openModal('modal');
+    if (!sub) return window.alert('Tem de Selecionar pelo Menos Um Desporto!');
+
+    const pre = document.getElementById('preinscricao');
+
+    // TODO: Integrar o recaptcha
+    if (pre.checkValidity())
+        pre.submit();
+    else
+        window.alert('Preencha Todos os Dados!');
 }
 
 // Validar Nome/Telemovel

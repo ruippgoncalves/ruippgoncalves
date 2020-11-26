@@ -1,3 +1,45 @@
+@media only screen and (max-width: 775px) {
+    .ball, .ball-right {
+        display: none;
+    }
+}
+
+@keyframes ball {
+    0% {}
+
+    50% {
+        transform: translateY(58.5vh) rotate(540deg);
+    }
+
+    100% {
+        transform:  translateY(0) rotate(1080deg);
+    }
+}
+
+.ball {
+    position: absolute;
+
+    left: 100px;
+    width: 100px;
+
+    animation-name: ball;
+    animation-duration: 2.2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.ball-right {
+    position: absolute;
+
+    right: 100px;
+    width: 100px;
+
+    animation-name: ball;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
 body {
     overflow: hidden;
 }
@@ -13,4 +55,8 @@ input {
 a, a:hover, a:visited {
     color: inherit;
     text-decoration: none;
+}
+
+select {
+    margin-top: 5px;
 }

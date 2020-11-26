@@ -8,6 +8,7 @@
   * React.JS
   * React Native
   * Expo
+  * Next.JS
   * Express.JS
 * Estudante (12º Ano)
 

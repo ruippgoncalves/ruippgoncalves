@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desporto Escolar</title>
 
+    <link rel="icon" type="image/png" href="assets/favicon.png"/>
+
     <!-- Components/Animations -->
     <link rel="stylesheet" href="vendor/css/main.css">
     <link rel="stylesheet" href="vendor/css/bar.css">
@@ -30,9 +32,10 @@
 
     <main>
         <!-- Carousel -->
-        <div class="carousel" id="carousel">
+        <div class="carousel" id="carousel"
+            style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
             <div class="carousel-title">
-                Desporto Escolar
+                Desporto Escolar<br />AEFH
             </div>
 
             <div class="carousel-item">
@@ -54,11 +57,49 @@
         </div>
 
         <!-- Modalidades -->
-        <div style="width: 100vw; height: calc(90vh - 54px); padding: 10px; text-align: center;">
-            <h1 style="margin-bottom: 20px;">Desportos Disponiveis</h1>
+        <div style="width: 100vw; padding: 10px; text-align: center;">
+            <h1 style="margin-bottom: 20px;">Pré Inscrição</h1>
 
-            <form style="display: block;">
-                <div>
+            <img src="assets/ball.png" alt="Bola" class="ball" />
+            <img src="assets/ball.png" alt="Bola" class="ball-right" />
+
+            <form style="text-align: left; display:flex; flex-direction: column; align-items: center" id="preinscricao">
+                <label for="email">Email: </label>
+                <input type="email" name="email" required /><br />
+
+                <label for="nome">Nome (Completo): </label>
+                <input type="text" name="nome" required /><br />
+
+                <label for="ano">Ano: </label>
+                <select name="ano" required>
+                    <optgroup label="1º Ciclo">
+                        <option value="1">1º Ano</option>
+                        <option value="2">2º Ano</option>
+                        <option value="3">3º Ano</option>
+                        <option value="4">4º Ano</option>
+                    </optgroup>
+                    <optgroup label="2º Ciclo">
+                        <option value="5">5º Ano</option>
+                        <option value="6">6º Ano</option>
+                    </optgroup>
+                    <optgroup label="3º Ciclo">
+                        <option value="7">7º Ano</option>
+                        <option value="8">8º Ano</option>
+                        <option value="9">9º Ano</option>
+                    </optgroup>
+                    <optgroup label="Secundário">
+                        <option value="10">10º Ano</option>
+                        <option value="11">11º Ano</option>
+                        <option value="12">12º Ano</option>
+                    </optgroup>
+                </select><br />
+
+                <label for="turma">Turma: </label>
+                <input type="text" name="turma" required /><br />
+
+                <label for="telemovel">Contacto Telemóvel: </label>
+                <input type="tel" name="telemovel" /><br />
+
                 <label for="idade">Introduza a sua idade: </label>
                 <input name="idade" type="number" min="6" max="25" required /><br />
 
@@ -68,59 +109,26 @@
                     <option value="femi">Feminino</option>
                 </select><br />
 
-                <input type="button" value="Verificar Desportos Disponiveis" onclick="disponibilidade()" /><br />
+                <div style="display: inline-block;">
+                    <input type="button" value="Verificar Desportos Disponiveis" onclick="disponibilidade()" />
+                    <input type="button" value="?" onclick="openModal('modal')" style="border-radius: 15px; height: 30px; width: 30px;" />
+                </div><br />
 
-                <div id="disponibilidade" style="text-align: left; width: fit-content; margin-left: auto; margin-right: auto;"></div>
+                <div id="disponibilidade"
+                    style="text-align: left; width: fit-content; margin-left: auto; margin-right: auto;"></div>
 
                 <div class="modal" id="modal">
                     <p class="modal-close">&times;</p>
 
-                    <label for="email">Email: </label>
-                    <input type="email" name="email" required /><br />
-
-                    <label for="nome">Nome (Completo): </label>
-                    <input type="text" name="nome" required /><br />
-
-                    <label for="ano">Ano: </label>
-                    <select name="ano" required>
-                        <optgroup label="1º Ciclo">
-                            <option value="1">1º Ano</option>
-                            <option value="2">2º Ano</option>
-                            <option value="3">3º Ano</option>
-                            <option value="4">4º Ano</option>
-                        </optgroup>
-                        <optgroup label="2º Ciclo">
-                            <option value="5">5º Ano</option>
-                            <option value="6">6º Ano</option>
-                        </optgroup>
-                        <optgroup label="3º Ciclo">
-                            <option value="7">7º Ano</option>
-                            <option value="8">8º Ano</option>
-                            <option value="9">9º Ano</option>
-                        </optgroup>
-                        <optgroup label="Secundário">
-                            <option value="10">10º Ano</option>
-                            <option value="11">11º Ano</option>
-                            <option value="12">12º Ano</option>
-                        </optgroup>
-                    </select><br />
-
-                    <label for="turma">Turma: </label>
-                    <input type="text" name="turma" required /><br />
-
-                    <label for="telemovel">Contacto Telemóvel: </label>
-                    <input type="tel" name="telemovel" /><br />
-
-                    <input type="submit" value="Inscrever" />
+                    <p style="margin-right: 20px;"><b>Desporto</b> - <b>Dias da Semana</b> - <b>Localização</b></p>
                 </div>
             </form>
         </div>
     </main>
 
-    <footer style="height: 10vh; text-align: center; padding-top: 5vh;">
-        <div style="background-color: gainsboro; padding-top: 1.5vh; height: 5vh;">
-            <a href="https://github.com/ruippgoncalves/ruippgoncalves/tree/master/escola2020recProj" target="_blank">Desenvolvido Por Rui Gonçalves</a>
-        </div>
+    <footer style="display: flex; height: 5vh; margin-top: 2vh; align-items: center; justify-content: center; background-color: gainsboro;">
+            <a href="https://github.com/ruippgoncalves/ruippgoncalves/tree/master/escola2020recProj"
+                target="_blank">Desenvolvido Por Rui Gonçalves</a>
     </footer>
 
     <script src="vendor/js/carousel.js"></script>
