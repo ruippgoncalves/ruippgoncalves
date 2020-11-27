@@ -71,6 +71,22 @@
                 </div>
 
                 <div class="text-input">
+                    <label for="idade">Introduza a sua Idade</label>
+                    <input name="idade" type="number" min="6" max="25" placeholder="17" required />
+                </div>
+
+                <label for="sexo" style="color: #595F6E;">Selecione o seu Sexo</label>
+                <select required name="sexo" class="select-input">
+                    <option value="masc" selected>Masculino</option>
+                    <option value="femi">Feminino</option>
+                </select>
+
+                <div class="text-input">
+                    <label for="telemovel">Contacto de Telemóvel</label>
+                    <input type="tel" name="telemovel" placeholder="567312678 ou +351567312678" />
+                </div>
+
+                <div class="text-input">
                     <label for="email">Email</label>
                     <input type="email" name="email" placeholder="username@gmail.com" required />
                 </div>
@@ -103,22 +119,6 @@
                     <label for="turma">Turma</label>
                     <input type="text" name="turma" placeholder="TSI" required />
                 </div>
-
-                <div class="text-input">
-                    <label for="telemovel">Contacto de Telemóvel</label>
-                    <input type="tel" name="telemovel" placeholder="567312678 ou +351567312678" />
-                </div>
-
-                <div class="text-input">
-                    <label for="idade">Introduza a sua Idade</label>
-                    <input name="idade" type="number" min="6" max="25" placeholder="17" required />
-                </div>
-
-                <label for="sexo" style="color: #595F6E;">Selecione o seu Sexo</label>
-                <select required name="sexo" class="select-input">
-                    <option value="masc" selected>Masculino</option>
-                    <option value="femi">Feminino</option>
-                </select>
 
                 <div style="display: inline-block;">
                     <input type="button" value="Verificar Desportos Disponiveis" onclick="disponibilidade()" />
