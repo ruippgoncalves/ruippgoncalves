@@ -3,7 +3,7 @@ function slideDown() {
     document.body.style.overflowY = 'auto';
     document.getElementById('navbar').style.display = 'block';
 
-    window.scrollTo(0, window.innerHeight - 54);
+    window.scrollTo(0, window.innerHeight);
 }
 
 function slideUp() {
@@ -76,10 +76,16 @@ document.getElementsByName('nome')[0].oninput = event => {
 }
 
 document.getElementsByName('telemovel')[0].oninput = event => {
-    if (/^([+]\d{2})?\d{10}$/g.test(event.target.value))
+    if (/^([+]\d{1,3})?\d{9}$/g.test(event.target.value))
         return event.target.setCustomValidity('');
 
     event.target.setCustomValidity('Número Inválido!');
+}
+
+// Easter Egg
+function easterEgg(event) {
+    if (event.shiftKey)
+        document.getElementById('img').src = 'assets/gmd-directions_run-school-18dp.svg';
 }
 
 // Init

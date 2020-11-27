@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desporto Escolar</title>
 
-    <link rel="icon" type="image/png" href="assets/favicon.png"/>
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
 
     <!-- Components/Animations -->
     <link rel="stylesheet" href="vendor/css/main.css">
     <link rel="stylesheet" href="vendor/css/bar.css">
     <link rel="stylesheet" href="vendor/css/carousel.css">
     <link rel="stylesheet" href="vendor/css/modal.css">
+    <link rel="stylesheet" href="vendor/css/input.css">
 
     <!-- Main -->
     <link rel="stylesheet" href="css/main.css">
@@ -22,7 +23,8 @@
     <!-- NavBar -->
     <nav class="bar" style="display: none;" id="navbar">
         <div class="bar-icon">
-            <img src="assets/gmd-directions_run-white-18dp.svg" width="30px" />
+            <!-- Easter Egg - Shift + Clicar no Icon -->
+            <img src="assets/gmd-directions_run-white-18dp.svg" width="30px" id="img" onmousedown="easterEgg(event)" />
         </div>
 
         <div class="bar-btn bar-hide">
@@ -32,8 +34,7 @@
 
     <main>
         <!-- Carousel -->
-        <div class="carousel" id="carousel"
-            style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+        <div class="carousel" id="carousel" style="font-family: sans-serif;">
             <div class="carousel-title">
                 Desporto Escolar<br />AEFH
             </div>
@@ -58,20 +59,24 @@
 
         <!-- Modalidades -->
         <div style="width: 100vw; padding: 10px; text-align: center;">
-            <h1 style="margin-bottom: 20px;">Pré Inscrição</h1>
+            <h1 style="margin-top: 20px; margin-bottom: 40px;">Inscrição</h1>
 
             <img src="assets/ball.png" alt="Bola" class="ball" />
-            <img src="assets/ball.png" alt="Bola" class="ball-right" />
+            <img src="assets/tennis-ball.png" alt="Bola" class="ball-right" />
 
             <form style="text-align: left; display:flex; flex-direction: column; align-items: center" id="preinscricao">
-                <label for="email">Email: </label>
-                <input type="email" name="email" required /><br />
+                <div class="text-input">
+                    <label for="nome">Nome (Completo)</label>
+                    <input type="text" name="nome" placeholder="Rui Pedro Pádua Gonçalves" required />
+                </div>
 
-                <label for="nome">Nome (Completo): </label>
-                <input type="text" name="nome" required /><br />
+                <div class="text-input">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" placeholder="username@gmail.com" required />
+                </div>
 
-                <label for="ano">Ano: </label>
-                <select name="ano" required>
+                <label for="ano" style="color: #595F6E;">Ano</label>
+                <select name="ano" required class="select-input">
                     <optgroup label="1º Ciclo">
                         <option value="1">1º Ano</option>
                         <option value="2">2º Ano</option>
@@ -92,27 +97,34 @@
                         <option value="11">11º Ano</option>
                         <option value="12">12º Ano</option>
                     </optgroup>
-                </select><br />
+                </select>
 
-                <label for="turma">Turma: </label>
-                <input type="text" name="turma" required /><br />
+                <div class="text-input">
+                    <label for="turma">Turma</label>
+                    <input type="text" name="turma" placeholder="TSI" required />
+                </div>
 
-                <label for="telemovel">Contacto Telemóvel: </label>
-                <input type="tel" name="telemovel" /><br />
+                <div class="text-input">
+                    <label for="telemovel">Contacto de Telemóvel</label>
+                    <input type="tel" name="telemovel" placeholder="567312678 ou +351567312678" />
+                </div>
 
-                <label for="idade">Introduza a sua idade: </label>
-                <input name="idade" type="number" min="6" max="25" required /><br />
+                <div class="text-input">
+                    <label for="idade">Introduza a sua Idade</label>
+                    <input name="idade" type="number" min="6" max="25" placeholder="17" required />
+                </div>
 
-                <label for="sexo">Selecione o seu Sexo: </label>
-                <select required name="sexo">
+                <label for="sexo" style="color: #595F6E;">Selecione o seu Sexo</label>
+                <select required name="sexo" class="select-input">
                     <option value="masc" selected>Masculino</option>
                     <option value="femi">Feminino</option>
-                </select><br />
+                </select>
 
                 <div style="display: inline-block;">
                     <input type="button" value="Verificar Desportos Disponiveis" onclick="disponibilidade()" />
-                    <input type="button" value="?" onclick="openModal('modal')" style="border-radius: 15px; height: 30px; width: 30px;" />
-                </div><br />
+                    <input type="button" value="?" onclick="openModal('modal')"
+                        style="border-radius: 15px; height: 30px; width: 30px;" />
+                </div>
 
                 <div id="disponibilidade"
                     style="text-align: left; width: fit-content; margin-left: auto; margin-right: auto;"></div>
@@ -126,9 +138,10 @@
         </div>
     </main>
 
-    <footer style="display: flex; height: 5vh; margin-top: 2vh; align-items: center; justify-content: center; background-color: gainsboro;">
-            <a href="https://github.com/ruippgoncalves/ruippgoncalves/tree/master/escola2020recProj"
-                target="_blank">Desenvolvido Por Rui Gonçalves</a>
+    <footer
+        style="display: flex; height: 5vh; margin-top: 2vh; align-items: center; justify-content: center; background-color: gainsboro;">
+        <a href="https://github.com/ruippgoncalves/ruippgoncalves/tree/master/escola2020recProj"
+            target="_blank">Desenvolvido Por Rui Gonçalves</a>
     </footer>
 
     <script src="vendor/js/carousel.js"></script>

@@ -19,7 +19,7 @@
 .ball {
     position: absolute;
 
-    left: 100px;
+    left: 5vw;
     width: 100px;
 
     animation-name: ball;
@@ -31,7 +31,7 @@
 .ball-right {
     position: absolute;
 
-    right: 100px;
+    right: 5vw;
     width: 100px;
 
     animation-name: ball;
@@ -44,7 +44,7 @@ body {
     overflow: hidden;
 }
 
-input {
+input[type=button] {
     margin-bottom: 5px;
     margin-top: 5px;
     padding: 5px;
