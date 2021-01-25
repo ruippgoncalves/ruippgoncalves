@@ -10,7 +10,7 @@
   * Expo
   * Next.JS
   * Express.JS
+  * Svelte
+  * GraphQL
+  * Apollo Server/Federation
 * Estudante (12º Ano)
-
-## Alguns Projetos Desenvolvidos para a Escola
-* [Projeto de Redes - 2020](https://ruippgoncalves.github.io/ruippgoncalves/escola2020recProj)
