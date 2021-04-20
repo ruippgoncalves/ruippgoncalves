@@ -8,6 +8,7 @@
   * React.JS
   * React Native
   * Next.JS
+  * Svelte
   * Express.JS
   * GraphQL
   * Flutter
