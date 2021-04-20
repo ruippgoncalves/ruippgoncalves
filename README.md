@@ -7,10 +7,8 @@
   * JS
   * React.JS
   * React Native
-  * Expo
   * Next.JS
   * Express.JS
-  * Svelte
   * GraphQL
-  * Apollo Server/Federation
+  * Flutter
 * Estudante (12º Ano)
